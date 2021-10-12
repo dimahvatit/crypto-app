@@ -4,6 +4,7 @@ import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import { useGetNewsQuery } from '../services/cryptoNewsApi';
 import { useGetCoinsQuery } from '../services/cryptoApi';
 import demoImg from '../images/crypto-news-demo-img.jpg';
+import ServerIssues from './ServerIssues';
 
 const { Text, Title } = Typography;
 const { Option } = Select;

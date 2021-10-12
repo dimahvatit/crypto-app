@@ -22,6 +22,12 @@ a:hover {
 	overflow: hidden;
 }
 
+.server-issues {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+}
+
 .navbar {
 	flex: 0.2;
 	background-color: rgb(0, 21, 41);
@@ -42,6 +48,7 @@ a:hover {
 	left: 0;
 	margin: 10px;
 	height: 100vh;
+	min-width: 20%;
 	margin: 0px;
 	background-color: rgb(0, 21, 41);
 }
@@ -372,9 +379,20 @@ a:hover {
 .exchange-image {
 	margin: 0px 10px !important;
 }
+
+.crypto-cards-header {
+	justify-content: space-between;
+	padding: 16px;
+}
+
+.change-view {
+	min-width: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .search-crypto {
-	margin: 20px auto 30px auto;
-	width: 250px;
+	flex: 0.2;
 }
 .crypto-card-container {
 	min-height: 65vh !important;

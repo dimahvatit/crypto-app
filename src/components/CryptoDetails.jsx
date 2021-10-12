@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
@@ -80,7 +81,7 @@ const CryptoDetails = () => {
 							</p>
 					</Col>
 					{stats.map(({ icon, title, value }) => (
-						<Row className='coin-stats' key={value}>
+						<Row className='coin-stats' key={uuidv4()}>
 							<Col className='coin-stats-name'>
 								<Text>{icon}</Text>
 								<Text>{title}</Text>
@@ -99,7 +100,7 @@ const CryptoDetails = () => {
 						</p>
 					</Col>
 					{genericStats.map(({ icon, title, value }) => (
-						<Row className='coin-stats' key={value}>
+						<Row className='coin-stats' key={uuidv4()}>
 							<Col className='coin-stats-name'>
 								<Text>{icon}</Text>
 								<Text>{title}</Text>
