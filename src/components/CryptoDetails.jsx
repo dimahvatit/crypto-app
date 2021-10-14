@@ -21,6 +21,19 @@ import {
 const { Title, Text } = Typography;
 const { Option } = Select;
 
+export const setPricePrecision = (price) => {
+
+	if (price.match(/[0-9]+/)[0] === '0') {
+		if (price.match(/\.0+/)[0].length > 4) {
+			return price.slice(0, 10);
+		} else {
+			return price.slice(0, 8);
+		}
+	} else {
+		return Number(price).toLocaleString('en', {maximumFractionDigits: 2});
+	}
+}
+
 const CryptoDetails = () => {
     const { coinId } = useParams();
     const [timePeriod, setTimePeriod] = useState('7d');
@@ -34,11 +47,11 @@ const CryptoDetails = () => {
 	const time = ['3h', '24h', '7d', '30d', '3m', '1y', '3y', '5y'];
 
 	const stats = [
-		{ title: 'Price to USD', value: `$ ${cryptoDetails.price && millify(cryptoDetails.price, {precision: 6})}`, icon: <DollarCircleOutlined /> },
+		{ title: 'Price to USD', value: `$ ${cryptoDetails.price && setPricePrecision(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
 		{ title: 'Rank', value: cryptoDetails.rank, icon: <NumberOutlined /> },
 		{ title: '24h Volume', value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume, {precision: 3})}`, icon: <ThunderboltOutlined /> },
 		{ title: 'Market Cap', value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap, {precision: 3})}`, icon: <DollarCircleOutlined /> },
-		{ title: 'All-time-high (daily avg.)', value: `$ ${millify(cryptoDetails.allTimeHigh.price, {precision: 3})}`, icon: <TrophyOutlined /> },
+		{ title: 'All-time-high (daily avg.)', value: `$ ${setPricePrecision(cryptoDetails.allTimeHigh.price)}`, icon: <TrophyOutlined /> },
 	];
 
 	const genericStats = [

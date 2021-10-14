@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { millify } from "millify";
 import { Link } from "react-router-dom";
-import { Card, Row, Col, Input, Button } from "antd";
+import { millify } from "millify";
+import { Card, Row, Col, Input, Radio } from "antd";
 import { OrderedListOutlined, AppstoreOutlined } from '@ant-design/icons';
 import { useGetCoinsQuery } from "../services/cryptoApi";
-import ServerIssues from './ServerIssues';
+import { setPricePrecision } from './CryptoDetails';
 
 const Cryptocurrencies = ({ simplified }) => {
 	const count = simplified ? 10 : 100;
 	const { data: coinsList, isFetching } = useGetCoinsQuery(count);
 	const [coins, setCoins] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
-	const [isGridView, setIsGridView] = useState(true);
+	const [coinsView, setCoinsView] = useState('grid');
 
 	useEffect(() => {
 		const filteredCoins = coinsList?.data?.coins.filter((coin) =>
@@ -22,7 +22,7 @@ const Cryptocurrencies = ({ simplified }) => {
 
 	const viewIconStyle = {
 		fontSize: 25,
-		color: "#0071bd",
+		color: "#3c71e4",
 	}
 
 	if (isFetching) return "Loading...";
@@ -37,10 +37,10 @@ const Cryptocurrencies = ({ simplified }) => {
 							onChange={(e) => setSearchTerm(e.target.value)}
 						/>
 					</div>
-					<div className='change-view'>
-						<Button size='large' type='primary' ghost={!isGridView} onClick={() => setIsGridView(prev => !prev)} icon={<OrderedListOutlined style={viewIconStyle}/>} />
-						<Button size='large' type='primary' ghost={isGridView} onClick={() => setIsGridView(prev => !prev)} icon={<AppstoreOutlined style={viewIconStyle} />}/>
-					</div>
+					<Radio.Group className='change-view' defaultValue="grid" buttonStyle="outline" onChange={e => setCoinsView(e.target.value)} >
+						<Radio.Button value="list"><OrderedListOutlined style={viewIconStyle} /></Radio.Button>
+						<Radio.Button value="grid"><AppstoreOutlined style={viewIconStyle} /></Radio.Button>
+					</Radio.Group>
 				</Row>
 			)}
 			<Row gutter={[32, 32]} className='crypto-card-container'>
@@ -58,7 +58,7 @@ const Cryptocurrencies = ({ simplified }) => {
 								}
 								hoverable>
 								<p>
-									Price: ${millify(coin.price, { precision: 6, space: true })}
+									Price: ${millify(coin.price, { space: true })}
 								</p>
 								<p>
 									Market Cap: $

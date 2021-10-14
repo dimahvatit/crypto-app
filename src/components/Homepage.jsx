@@ -20,10 +20,10 @@ if (isFetching) return 'Loading...';
             <Title level={2} className="heading">Global Crypto Stats</Title>
             <Row gutter={[0, 16]}>
                 <Col span={12}><Statistic title="Total Cryptocurrencies" value={globalStats.total} /></Col>
-                <Col span={12}><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges, {precision: 4})} /></Col>
+                <Col span={12}><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges, {precision: 1})} /></Col>
                 <Col span={12}><Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap, {precision: 4})} /></Col>
                 <Col span={12}><Statistic title="Total 24h Volume" value={millify(globalStats.total24hVolume, {precision: 4})} /></Col>
-                <Col span={12}><Statistic title="Total Markets" value={millify(globalStats.totalMarkets, {precision: 4})} /></Col>
+                <Col span={12}><Statistic title="Total Markets" value={millify(globalStats.totalMarkets, {precision: 1})} /></Col>
             </Row>
 
             <div className="home-heading-container">
