@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ddd70731.chunk.css",
+    "main.js": "/static/js/main.5ed77007.chunk.js",
+    "main.js.map": "/static/js/main.5ed77007.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b14385b2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b14385b2.js.map",
+    "static/css/2.a95be28f.chunk.css": "/static/css/2.a95be28f.chunk.css",
+    "static/js/2.428e4bf0.chunk.js": "/static/js/2.428e4bf0.chunk.js",
+    "static/js/2.428e4bf0.chunk.js.map": "/static/js/2.428e4bf0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.a95be28f.chunk.css.map": "/static/css/2.a95be28f.chunk.css.map",
+    "static/css/main.ddd70731.chunk.css.map": "/static/css/main.ddd70731.chunk.css.map",
+    "static/js/2.428e4bf0.chunk.js.LICENSE.txt": "/static/js/2.428e4bf0.chunk.js.LICENSE.txt",
+    "static/media/crypto-news-demo-img.b0c9beef.jpg": "/static/media/crypto-news-demo-img.b0c9beef.jpg",
+    "static/media/cryptocurrency-logo.c652390c.png": "/static/media/cryptocurrency-logo.c652390c.png",
+    "static/media/serverDown.532ea75d.svg": "/static/media/serverDown.532ea75d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b14385b2.js",
+    "static/css/2.a95be28f.chunk.css",
+    "static/js/2.428e4bf0.chunk.js",
+    "static/css/main.ddd70731.chunk.css",
+    "static/js/main.5ed77007.chunk.js"
+  ]
+}
