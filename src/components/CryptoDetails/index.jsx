@@ -4,12 +4,13 @@ import millify from "millify";
 import { v4 as uuidv4 } from "uuid";
 import HTMLReactParser from "html-react-parser";
 import { Row, Col, Typography, Select } from "antd";
-import LineChart from "./LineChart";
+import LineChart from "../LineChart";
 /*prettier-ignore*/
-import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../services/cryptoApi";
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../../services/cryptoApi";
 /*prettier-ignore*/
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from "@ant-design/icons";
-import Loader from './Loader';
+import Loader from '../Loader';
+import './style.css';
 
 const { Title, Text } = Typography;
 const { Option } = Select;

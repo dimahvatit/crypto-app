@@ -1,9 +1,10 @@
 import React from 'react';
 import { millify } from 'millify';
-import { Typography, Row, Col, Statistic, Spin } from 'antd';
+import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
-import { useGetCoinsQuery } from '../services/cryptoApi'; 
-import { Cryptocurrencies, News, Loader } from '../components';
+import { useGetCoinsQuery } from '../../services/cryptoApi'; 
+import { Cryptocurrencies, News, Loader } from '..';
+import './style.css';
 
 const { Title } = Typography;
 

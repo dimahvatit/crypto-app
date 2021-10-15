@@ -4,9 +4,10 @@ import HTMLReactParser from "html-react-parser";
 import { millify } from "millify";
 import { Card, Row, Col, Input, Radio, Typography, Collapse, Avatar, Space } from "antd";
 import { OrderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
-import { useGetCoinsQuery } from "../services/cryptoApi";
-import { setPricePrecision } from "./CryptoDetails";
-import { Loader } from "../components";
+import { useGetCoinsQuery } from "../../services/cryptoApi";
+import { setPricePrecision } from "../CryptoDetails/index.jsx";
+import { Loader } from "..";
+import './style.css';
 
 const { Panel } = Collapse;
 const { Text } = Typography;
@@ -92,7 +93,7 @@ const Cryptocurrencies = ({ simplified }) => {
 										{millify(coin?.price, { precision: 2 })}
 									</Col>
 									<Col className='col-tex-center' span={6}>
-										{coin?.marketCap}
+										{millify(coin?.marketCap, { precision: 1 })}
 									</Col>
 									<Col className='col-tex-center' span={6}>
 										{coin?.change}%

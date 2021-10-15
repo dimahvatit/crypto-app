@@ -1,0 +1,38 @@
+.exchanges-row {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.exchanges-col-heading {
+	font-weight: 600;
+	font-size: 1.1rem;
+	margin-bottom: 1.2rem;
+}
+
+.col-tex-center {
+	text-align: center;
+}
+
+span.exchange-name {
+	color: #0071bd;
+}
+
+@media screen and (max-width: 640px) {
+	.exchanges .exchanges-row {
+		font-size: 0.8rem;
+		flex-wrap: nowrap;
+	}
+
+	.exchanges .exchanges-col-heading,
+	.exchanges .col-tex-center {
+		font-weight: 600;
+		font-size: 0.9rem;
+		flex: 0 0 20%;
+	}
+
+	.exchanges .exchanges-col-heading:first-child,
+	.exchanges .col-exchange-container {
+		flex: 1 0 40%;
+		max-width: 40%;
+	}
+}

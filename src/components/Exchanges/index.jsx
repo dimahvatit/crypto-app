@@ -2,8 +2,9 @@ import React from "react";
 import HTMLReactParser from "html-react-parser";
 import millify from "millify";
 import { Row, Col, Typography, Collapse, Avatar, Space } from "antd";
-import { useGetExchangesQuery } from "../services/cryptoApi";
-import Loader from './Loader';
+import { useGetExchangesQuery } from "../../services/cryptoApi";
+import Loader from '../Loader';
+import './style.css';
 
 const { Panel } = Collapse;
 const { Text } = Typography;
