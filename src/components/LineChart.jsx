@@ -46,7 +46,7 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
                 </Col>
             </Row>
             <Row style={{maxWidth: '100%'}}>
-                <Line data={data} options={options} style={{width: '100%'}}/>
+                <Line data={data} options={options} style={{maxWidth: '100%'}}/>
             </Row>
         </>
     )

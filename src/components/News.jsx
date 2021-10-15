@@ -4,15 +4,17 @@ import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import { useGetNewsQuery } from '../services/cryptoNewsApi';
 import { useGetCoinsQuery } from '../services/cryptoApi';
 import demoImg from '../images/crypto-news-demo-img.jpg';
-import ServerIssues from './ServerIssues';
+import Loader from './Loader';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
 
 const News = ({ simplified }) => {
     const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
-    const {data: cryptoNews } = useGetNewsQuery({newsCategory, count: simplified ? 6 : 15});
+    const {data: cryptoNews, isFetching} = useGetNewsQuery({newsCategory, count: simplified ? 6 : 15});
 	const { data } = useGetCoinsQuery(100);
+
+    if (isFetching) return <Loader />;
 
     return (
         <div>

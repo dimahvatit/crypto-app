@@ -6,3 +6,4 @@ export { default as CryptoDetails} from './CryptoDetails.jsx';
 export { default as News} from './News.jsx';
 export { default as LineChart } from './LineChart.jsx';
 export { default as ServerIssues } from './ServerIssues.jsx';
+export { default as Loader } from './Loader.jsx';

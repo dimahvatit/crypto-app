@@ -3,14 +3,15 @@ import HTMLReactParser from "html-react-parser";
 import millify from "millify";
 import { Row, Col, Typography, Collapse, Avatar, Space } from "antd";
 import { useGetExchangesQuery } from "../services/cryptoApi";
+import Loader from './Loader';
 
 const { Panel } = Collapse;
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 const Exchanges = () => {
 	const { data: exchanges, isFetching } = useGetExchangesQuery();
 
-	if (isFetching) return "Loading...";
+	if (isFetching) return <Loader />;
 
 	const exchangesList = exchanges?.data?.exchanges;
 
