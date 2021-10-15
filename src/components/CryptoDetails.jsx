@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
-import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 import millify from "millify";
+import HTMLReactParser from "html-react-parser";
 import { Row, Col, Typography, Select } from "antd";
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../services/cryptoApi";
 import LineChart from './LineChart';
@@ -21,10 +21,10 @@ import {
 const { Title, Text } = Typography;
 const { Option } = Select;
 
-export const setPricePrecision = (price) => {
+export function setPricePrecision(price) {
 
 	if (price.match(/[0-9]+/)[0] === '0') {
-		if (price.match(/\.0+/)[0].length > 4) {
+		if (price.match(/\.0+/) && price.match(/\.0+/)[0].length > 4) {
 			return price.slice(0, 10);
 		} else {
 			return price.slice(0, 8);
@@ -44,10 +44,10 @@ const CryptoDetails = () => {
 
 	if (isFetching) return 'Loading...';
 
-	const time = ['3h', '24h', '7d', '30d', '3m', '1y', '3y', '5y'];
+	const time = ['24h', '7d', '30d', '3m', '1y', '3y', '5y'];
 
 	const stats = [
-		{ title: 'Price to USD', value: `$ ${cryptoDetails.price && setPricePrecision(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
+		{ title: 'Price to USD', value: `$ ${cryptoDetails?.price && setPricePrecision(cryptoDetails?.price)}`, icon: <DollarCircleOutlined /> },
 		{ title: 'Rank', value: cryptoDetails.rank, icon: <NumberOutlined /> },
 		{ title: '24h Volume', value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume, {precision: 3})}`, icon: <ThunderboltOutlined /> },
 		{ title: 'Market Cap', value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap, {precision: 3})}`, icon: <DollarCircleOutlined /> },

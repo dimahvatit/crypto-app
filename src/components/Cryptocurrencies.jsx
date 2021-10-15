@@ -43,7 +43,7 @@ const Cryptocurrencies = ({ simplified }) => {
 					</Radio.Group>
 				</Row>
 			)}
-			<Row gutter={[32, 32]} className='crypto-card-container'>
+			<Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]} className='crypto-card-container'>
 				{coins?.map((coin) => (
 					<Col key={coin.uuid} xs={24} ms={12} lg={6} className='crypto-card'>
 						<Link to={`/crypto/${coin.id}`}>
@@ -58,7 +58,7 @@ const Cryptocurrencies = ({ simplified }) => {
 								}
 								hoverable>
 								<p>
-									Price: ${millify(coin.price, { space: true })}
+									Price: ${setPricePrecision(coin.price)}
 								</p>
 								<p>
 									Market Cap: $
