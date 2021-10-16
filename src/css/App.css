@@ -1,9 +1,3 @@
-/* TODO Убрать отступ справа (по крайней мере в мобильной версии) */
-/*! В моб. версии слишком большой навбар !*/
-/* Exchanges в моб версии слишком сильно сжимается */
-/*! Search в exchanges сжимается !*/
-/*! Loader в моб версии не растягивается на всю высоту */
-
 :root {
 	--text-primary: #000;
 	--bgPrimary: #fff;
@@ -25,18 +19,19 @@ a:hover {
 }
 
 .loader {
-	position: absolute;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    background: #bdbdbd;
 }
+
+@media screen and (max-width: 1000px){
+	.loader {
+		margin-top: 30px;
+	}
+}
+
 
 /* TODO .server-issues {
 	font-size: 1.5rem;
@@ -76,10 +71,9 @@ a:hover {
 	}
 
 	.main {
-		flex: 1;
-		margin-top: 110px;
+		flex: 1 1 80%;
+		margin-top: 95px;
 		margin-left: 0px;
-		margin-right: 10px;
 	}
 
 	.nav-container {

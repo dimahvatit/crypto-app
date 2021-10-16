@@ -46,7 +46,6 @@
 }
 
 .coin-stats {
-	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--border);
 	font-size: 1rem;
@@ -69,7 +68,6 @@
 	font-size: 1rem;
 	opacity: 0.9;
 }
-
 
 .coin-desc {
 	flex: 0.5;
@@ -155,10 +153,12 @@
 
 
 @media screen and (max-width: 1000px) {
-	.stats-container {
+	.coin-detail-container .stats-container {
 		flex-direction: column;
+		align-items: stretch;
+		flex-wrap: nowrap;
 	}
-	.coin-desc-link {
+	.coin-detail-container .coin-desc-link {
 		flex-direction: column;
 	}
 	.stats-container h2 {

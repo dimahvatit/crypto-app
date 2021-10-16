@@ -18,6 +18,25 @@ const Cryptocurrencies = ({ simplified }) => {
 	const [coins, setCoins] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [coinsView, setCoinsView] = useState("grid");
+	const [screenSize, setScreenSize] = useState(null);
+	const [renderChangeView, setRenderChangeView] = useState(true);
+
+	useEffect(() => {
+		const handleResize = () => setScreenSize(window.innerWidth);
+
+		window.addEventListener("resize", handleResize);
+		handleResize();
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	useEffect(() => {
+		if (screenSize < 550) {
+			setRenderChangeView(false);
+		} else {
+			setRenderChangeView(true);
+		}
+	}, [screenSize])
 
 	useEffect(() => {
 		const filteredCoins = coinsList?.data?.coins.filter((coin) =>
@@ -43,18 +62,20 @@ const Cryptocurrencies = ({ simplified }) => {
 							onChange={(e) => setSearchTerm(e.target.value)}
 						/>
 					</div>
-					<Radio.Group
-						className='change-view'
-						defaultValue='grid'
-						buttonStyle='outline'
-						onChange={(e) => setCoinsView(e.target.value)}>
-						<Radio.Button value='list'>
-							<OrderedListOutlined style={viewIconStyle} />
-						</Radio.Button>
-						<Radio.Button value='grid'>
-							<AppstoreOutlined style={viewIconStyle} />
-						</Radio.Button>
-					</Radio.Group>
+					{renderChangeView && (
+						<Radio.Group
+							className='change-view'
+							defaultValue='grid'
+							buttonStyle='outline'
+							onChange={(e) => setCoinsView(e.target.value)}>
+							<Radio.Button value='list'>
+								<OrderedListOutlined style={viewIconStyle} />
+							</Radio.Button>
+							<Radio.Button value='grid'>
+								<AppstoreOutlined style={viewIconStyle} />
+							</Radio.Button>
+						</Radio.Group>
+					)}
 				</Row>
 			)}
 

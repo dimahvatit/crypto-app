@@ -16,7 +16,7 @@ label.ant-radio-button-wrapper {
 }
 
 .search-crypto {
-	flex: 0.2;
+	flex: 0 0 150px;
 }
 
 .crypto-card-container {
@@ -40,3 +40,10 @@ label.ant-radio-button-wrapper {
 .crypto-card .coin-image {
 	width: 35px;
 }
+
+
+/* @media screen and (max-width: 530px) {
+	div.change-view {
+		display: none;
+	}
+} */
