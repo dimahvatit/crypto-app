@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import { Layout, Typography, Space, Anchor } from "antd";
 import {
 	Navbar,
 	Homepage,
@@ -9,11 +9,13 @@ import {
 	CryptoDetails,
 	News,
 } from "./components";
+import Logo from "./components/Logo";
 import "./css/App.css";
+const { Link: AnchorLink } = Anchor;
 
 function App() {
 	return (
-		<div className='app'>
+		<div className='app' id='top'>
 			<div className='navbar'>
 				<Navbar />
 			</div>
@@ -40,10 +42,12 @@ function App() {
 					</div>
 				</Layout>
 				<div className='footer'>
+					<Anchor affix={false}>
+						<AnchorLink href='#top' title={<Logo />} />
+					</Anchor>
 					<Typography.Title
 						level={5}
 						style={{ color: "white", textAlign: "center" }}>
-						CrApp <br />
 						All rights reserved
 					</Typography.Title>
 					<Space>

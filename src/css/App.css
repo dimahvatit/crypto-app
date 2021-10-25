@@ -93,6 +93,13 @@ a:hover {
 		right: 0px;
 	}
 }
+
+@media screen and (max-width: 500px) {
+	.main {
+		margin-top: 75px;
+	}
+}
+
 /************************************/
 
 /*! LINECHART !*/
@@ -128,4 +135,21 @@ a:hover {
 	flex-direction: column;
 	padding: 20px;
 	align-items: center;
+}
+
+.footer a {
+	width: 100px;
+}
+
+.footer .logo {
+	margin: 0;
+	width: 100%;
+}
+
+.footer .ant-anchor-ink {
+	display: none;
+}
+
+.footer .ant-anchor-link {
+	padding: 0 0 10px;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Menu, Typography, Avatar } from "antd";
+import { Button, Menu } from "antd";
+import Logo from '../Logo' ;
 import {
 	HomeOutlined,
 	MoneyCollectOutlined,
@@ -8,8 +9,7 @@ import {
 	FundOutlined,
 	MenuOutlined,
 } from "@ant-design/icons";
-import logoIcon from "../../images/cryptocurrency-logo.png";
-import './style.css';
+import "./style.css";
 
 const Navbar = () => {
 	const [activeMenu, setActiveMenu] = useState(true);
@@ -35,30 +35,27 @@ const Navbar = () => {
 	return (
 		<div className='nav-container'>
 			<div className='logo-container'>
-				<Link to='/'>
-					<Avatar src={logoIcon} size={55} />
-				</Link>
-				<Typography.Title level={2} className='logo'>
-					<Link to='/'>crApp</Link>
-				</Typography.Title>
-				<Button
-					className='menu-control-container'
-					onClick={() => setActiveMenu((prevVal) => !prevVal)}>
-					<MenuOutlined />
-				</Button>
+				<Logo withAvatar='true'/>
+			<Button
+				className='menu-control-container'
+				onClick={() => setActiveMenu((prevVal) => !prevVal)}>
+				<MenuOutlined />
+			</Button>
 			</div>
 			{activeMenu && (
 				<Menu theme='dark'>
-					<Menu.Item key='1' icon={<HomeOutlined className="nav-menu-icon"/>}>
+					<Menu.Item key='1' icon={<HomeOutlined className='nav-menu-icon' />}>
 						<Link to='/'>Home</Link>
 					</Menu.Item>
-					<Menu.Item key='2' icon={<FundOutlined className="nav-menu-icon"/>}>
+					<Menu.Item key='2' icon={<FundOutlined className='nav-menu-icon' />}>
 						<Link to='/cryptocurrencies'>Cryptocurrencies</Link>
 					</Menu.Item>
-					<Menu.Item key='3' icon={<MoneyCollectOutlined className="nav-menu-icon"/>}>
+					<Menu.Item
+						key='3'
+						icon={<MoneyCollectOutlined className='nav-menu-icon' />}>
 						<Link to='/exchanges'>Exchanges</Link>
 					</Menu.Item>
-					<Menu.Item key='4' icon={<BulbOutlined className="nav-menu-icon"/>}>
+					<Menu.Item key='4' icon={<BulbOutlined className='nav-menu-icon' />}>
 						<Link to='/news'>News</Link>
 					</Menu.Item>
 				</Menu>
