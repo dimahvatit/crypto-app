@@ -35,7 +35,9 @@ const Navbar = () => {
 	return (
 		<div className='nav-container'>
 			<div className='logo-container'>
-				<Logo withAvatar='true'/>
+				<Link to='/'>
+					<Logo withAvatar='true'/>
+				</Link>
 			<Button
 				className='menu-control-container'
 				onClick={() => setActiveMenu((prevVal) => !prevVal)}>

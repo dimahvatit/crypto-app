@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space, Anchor } from "antd";
+import { Layout, Typography, Space } from "antd";
 import {
 	Navbar,
 	Homepage,
@@ -11,12 +11,11 @@ import {
 } from "./components";
 import Logo from "./components/Logo";
 import "./css/App.css";
-const { Link: AnchorLink } = Anchor;
 
 function App() {
 	return (
-		<div className='app' id='top'>
-			<div className='navbar'>
+		<div className='app'>
+			<div className='navbar' id='top'>
 				<Navbar />
 			</div>
 			<div className='main'>
@@ -42,9 +41,7 @@ function App() {
 					</div>
 				</Layout>
 				<div className='footer'>
-					<Anchor affix={false}>
-						<AnchorLink href='#top' title={<Logo />} />
-					</Anchor>
+					<Logo />
 					<Typography.Title
 						level={5}
 						style={{ color: "white", textAlign: "center" }}>

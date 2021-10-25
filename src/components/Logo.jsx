@@ -1,15 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Avatar } from "antd";
 import logoIcon from "../images/cryptocurrency-logo.png";
 
 const Logo = ({ withAvatar }) => {
 	return (
 		<>
-			{withAvatar && <Link to='/'>
-				<Avatar src={logoIcon} size={55} />
-			</Link>}
-			<Link to='/' className='logo'>
+			{withAvatar && <Avatar src={logoIcon} size={55} />}
+			<div className='logo'>
 				<svg
 					viewBox='0 0 300 80'
 					fill='none'
@@ -148,7 +145,7 @@ const Logo = ({ withAvatar }) => {
 						</clipPath>
 					</defs>
 				</svg>
-			</Link>
+			</div>
 		</>
 	);
 };
