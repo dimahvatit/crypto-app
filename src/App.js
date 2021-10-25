@@ -41,7 +41,9 @@ function App() {
 					</div>
 				</Layout>
 				<div className='footer'>
-					<Logo />
+					<div style={{cursor: 'pointer'}} onClick={() => window.scrollTo({top: 0, left: 0, behavior: "smooth"})}>
+						<Logo />
+					</div>
 					<Typography.Title
 						level={5}
 						style={{ color: "white", textAlign: "center" }}>
