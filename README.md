@@ -1,5 +1,5 @@
-# CrApp (Crypto app :))
+# CoInfo (Coin info app)
 
-Simple crypto info app made with redux-toolkit and using some public crypto and news APIs.
+Informational cryptocurrency app built with React, redux-toolkit with some additional libraries and using a third party API.
 
-link: https://coinfo-dimahvatit.netlify.app/
+link: https://coinfo-dimahvatit.netlify.app/ !Temporary unavailable!
